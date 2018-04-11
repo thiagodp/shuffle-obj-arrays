@@ -1,0 +1,30 @@
+{
+	"name": "shuffle-obj-arrays",
+	"version": "1.0.0",
+	"description": "Shuffles the arrays of the given object (map) using @shuffle-array",
+	"license": "MIT",
+	"repository": "https://github.com/thiagodp/shuffle-obj-arrays.git",
+	"author": {
+		"name": "Thiago Delgado Pinto"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"shuffle",
+		"object",
+		"map",
+		"array",
+		"rng",
+		"prng"
+	],
+	"scripts": {
+		"test": "ava"
+	},
+	"dependencies": {
+		"shuffle-array": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0"
+	}
+}
