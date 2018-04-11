@@ -42,12 +42,12 @@ Randomizes the order of the elements in all arrays of the given object.
   - `copyNonArrays` {boolean} - `true` to copy non-array properties of the given object. Only works when `copy` is `true`. Defaults to `false`.
   - `rng` {function} - Custom random number generator. Defaults to `Math.random`.
 
-Example:
+#### Example:
 
 ```javascript
 const shuffleObjArrays = require( 'shuffle-obj-arrays' );
 
-// Using a external pseudo-random generator
+// Using a external pseudo-random number generator
 // https://github.com/davidbau/seedrandom
 const seedrandom = require( 'seedrandom' );
 const myRng = seedrandom( 'my seed' );
