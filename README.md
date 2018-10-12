@@ -1,5 +1,6 @@
 # shuffle-obj-arrays
 
+[![Build Status](https://travis-ci.org/thiagodp/shuffle-obj-arrays.svg?branch=master)](https://travis-ci.org/thiagodp/shuffle-obj-arrays)
 [![Greenkeeper badge](https://badges.greenkeeper.io/thiagodp/shuffle-obj-arrays.svg)](https://greenkeeper.io/)
 
 > Shuffles the arrays of the given (object) map using [shuffle-array](https://github.com/pazguille/shuffle-array).
