@@ -19,12 +19,13 @@
 		"prng"
 	],
 	"scripts": {
-		"test": "ava"
+		"test": "ava",
+		"preversion": "ava"
 	},
 	"dependencies": {
 		"shuffle-array": "^1.0.0"
 	},
 	"devDependencies": {
-		"ava": "^3.0.0"
+		"ava": "^3.8.1"
 	}
 }

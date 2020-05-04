@@ -1,5 +1,5 @@
-import test from 'ava';
-import shuffle from '.';
+const test = require( 'ava' );
+const shuffle = require( '.' );
 
 const fakeRandom = () => 0.2;
 
