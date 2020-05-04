@@ -1,6 +1,6 @@
 {
 	"name": "shuffle-obj-arrays",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Shuffles the arrays of the given object (map) using @shuffle-array",
 	"license": "MIT",
 	"repository": "https://github.com/thiagodp/shuffle-obj-arrays.git",
