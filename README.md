@@ -1,14 +1,15 @@
 # shuffle-obj-arrays
 
+[![Version](https://img.shields.io/npm/v/shuffle-obj-arrays)](https://img.shields.io/npm/v/shuffle-obj-arrays?label=Version)
 [![Build Status](https://travis-ci.org/thiagodp/shuffle-obj-arrays.svg?branch=master)](https://travis-ci.org/thiagodp/shuffle-obj-arrays)
-[![Greenkeeper badge](https://badges.greenkeeper.io/thiagodp/shuffle-obj-arrays.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/github/thiagodp/shuffle-obj-arrays/badge.svg?targetFile=package.json)](https://snyk.io/test/github/thiagodp/shuffle-obj-arrays?targetFile=package.json)
 
 > Shuffles the arrays of the given (object) map using [shuffle-array](https://github.com/pazguille/shuffle-array).
 
 ## Install
 
 ```bash
-npm install shuffle-obj-arrays --save
+npm install shuffle-obj-arrays
 ```
 
 ## Example
@@ -16,13 +17,15 @@ npm install shuffle-obj-arrays --save
 ```javascript
 const shuffleObjArrays = require( 'shuffle-obj-arrays' );
 
-shuffleObjArrays( {
-    "foo": [ "x", "y" ],
-    "bar": [ "a", "b", "c", "d" ],
-    "baz": [ "f", "g" ]
-} )
+console.log(
+	shuffleObjArrays( {
+		"foo": [ "x", "y" ],
+		"bar": [ "a", "b", "c", "d" ],
+		"baz": [ "f", "g" ]
+	} )
+);
 ```
-will return something like
+It will print something like:
 ```json
 {
     "foo": [ "y", "x" ],
@@ -31,11 +34,20 @@ will return something like
 }
 ```
 
-## API
+## Version 1
 
-[shuffle-obj-arrays]() accepts the same options as [shuffle](https://github.com/pazguille/shuffle-array#shufflearr-options), plus the option `copyNonArrays`.
+### API
 
-### shuffleObjArrays( obj, [options] )
+Version 1 accepts the same options as [shuffle](https://github.com/pazguille/shuffle-array#shufflearr-options), plus `copyNonArrays`.
+
+Syntax:
+```typescript
+shuffleObjArrays(
+	obj: object,
+	options: { copy: false, copyNonArrays: false },
+	rng: (n: number): number = Math.random
+): object
+```
 
 Randomizes the order of the elements in all arrays of the given object.
 
@@ -45,7 +57,7 @@ Randomizes the order of the elements in all arrays of the given object.
   - `copyNonArrays` {boolean} - `true` to copy non-array properties of the given object. Only works when `copy` is `true`. Defaults to `false`.
   - `rng` {function} - Custom random number generator. Defaults to `Math.random`.
 
-#### Example:
+### Example:
 
 ```javascript
 const shuffleObjArrays = require( 'shuffle-obj-arrays' );
@@ -53,24 +65,25 @@ const shuffleObjArrays = require( 'shuffle-obj-arrays' );
 // Using a external pseudo-random number generator
 // https://github.com/davidbau/seedrandom
 const seedrandom = require( 'seedrandom' );
-const myRng = seedrandom( 'my seed' );
 
 const options = {
     copy: true,
-    rng: myRng
+    rng: seedrandom( 'my seed' )
 };
 
-shuffleObjArrays(
-    {
-        "foo": [ "x", "y" ],
-        "bar": [ "a", "b", "c", "d" ],
-        "baz": [ "f", "g" ],
-        "zoo": "non array property"
-    },
-    options
+console.log(
+	shuffleObjArrays(
+		{
+			"foo": [ "x", "y" ],
+			"bar": [ "a", "b", "c", "d" ],
+			"baz": [ "f", "g" ],
+			"zoo": "non array property"
+		},
+		options
+	)
 );
 ```
-will return something like
+It returns something like:
 ```json
 {
     "foo": [ "y", "x" ],
